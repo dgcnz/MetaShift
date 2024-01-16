@@ -1,0 +1,36 @@
+tasks:
+  - name: task_abcck
+    seed: 42
+    num_images_per_class_train: 50
+    num_images_per_class_test: 50
+    selected_classes:
+      - airplane
+      - bed
+      - car
+      - cow
+      - keyboard
+    experiments:
+      - name: bed(dog)_bed(cat)
+        spurious_class: bed
+        train_context: dog
+        test_context: cat
+      - name: bed(cat)_bed(dog)
+        spurious_class: bed
+        train_context: cat
+        test_context: dog
+      - name: car(dog)_car(cat)
+        spurious_class: car
+        train_context: dog
+        test_context: cat
+      - name: car(cat)_car(dog)
+        spurious_class: car
+        train_context: cat
+        test_context: dog
+      # - name: cow(dog)_cow(cat)
+      #   spurious_class: cow
+      #   train_context: dog
+      #   test_context: cat
+      # - name: keyboard(dog)_keyboard(cat)
+      #   spurious_class: keyboard
+      #   train_context: dog
+      #   test_context: cat
