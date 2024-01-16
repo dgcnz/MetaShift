@@ -10,27 +10,54 @@ tasks:
       - cow
       - keyboard
     experiments:
-      - name: bed(dog)_bed(cat)
+      - name: bed_dog_cat
         spurious_class: bed
         train_context: dog
         test_context: cat
-      - name: bed(cat)_bed(dog)
+      - name: bed_cat_dog
         spurious_class: bed
         train_context: cat
         test_context: dog
-      - name: car(dog)_car(cat)
+      - name: car_dog_cat
         spurious_class: car
         train_context: dog
         test_context: cat
-      - name: car(cat)_car(dog)
+      - name: car_cat_dog
         spurious_class: car
         train_context: cat
         test_context: dog
-      # - name: cow(dog)_cow(cat)
+      # - name: cow(dog)_cow(cat) # Not enough images
       #   spurious_class: cow
       #   train_context: dog
       #   test_context: cat
-      # - name: keyboard(dog)_keyboard(cat)
+      # - name: keyboard(dog)_keyboard(cat) # Not enough images
       #   spurious_class: keyboard
       #   train_context: dog
       #   test_context: cat
+  - name: task_bcmst
+    seed: 42
+    num_images_per_class_train: 50
+    num_images_per_class_test: 50
+    selected_classes:
+      - beach
+      - computer
+      - motorcycle
+      - stove
+      - table
+    experiments:
+      - name: table_cat_dog
+        spurious_class: table
+        train_context: cat
+        test_context: dog
+      - name: table_dog_cat
+        spurious_class: table
+        train_context: dog
+        test_context: cat
+      - name: table_books_dog
+        spurious_class: table
+        train_context: books
+        test_context: dog
+      - name: table_books_cat
+        spurious_class: table
+        train_context: books
+        test_context: cat
